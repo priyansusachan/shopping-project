@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+//1. Refer Component Decorator from core library
+import { Component } from "@angular/core";
 
+//2. Use Component Decorator
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    //Specify the tag name for app component class
+    selector: "<app-root>",
+    
+    //Provide output content for the component
+    template: `
+    <!-- <h3>My First Angular Component</h3> -->
+    <app-header></app-header>
+    <hr>
+    <router-outlet></router-outlet>`
 })
-export class AppComponent {
-  title = 'shopping-project';
+//3. Define Component class
+export class AppComponent{
+    constructor(){
+        console.log("App Component created.")
+    }
 }
