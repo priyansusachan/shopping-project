@@ -7,3 +7,9 @@ a {
 .menu-spacer{
     margin-right: 10px;
 }
+
+.active-link{
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
