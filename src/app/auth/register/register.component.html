@@ -1,1 +1,31 @@
-<p>register works!</p>
+
+<div class="content">
+    <mat-card>
+        <mat-card-header>
+            <h2>Register</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <form #registerForm = "ngForm" (submit)="doRegister(registerForm.valid)">
+                <mat-form-field class="full-width">
+                    <mat-label>UserName</mat-label>
+                    <input type="text" matInput name="txtUser" [(ngModel)]="formUser.username" required/>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput name="txtPassword" [(ngModel)]="formUser.password" required/>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                    <mat-label>Role (User Role)</mat-label>
+                    <mat-select name="dnRole" [(ngModel)]="formUser.role" required>
+                        <mat-option value="">Select A Role</mat-option>
+                        <mat-option value="vendon">Supplier</mat-option>
+                        <mat-option value="staff">Staff</mat-option>
+                        <mat-option value="cust">Customer</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <button mat-raised-button color="primary">Submit</button>
+                Existing User? <a routerLink="/auth/login" mat-raised-button color="accent">Login</a>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

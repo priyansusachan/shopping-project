@@ -1,10 +1,10 @@
 <h2>List of Products </h2>
-
+{{today | date : "fullDate" | uppercase }}
 <div class ="card-group">
     <div class="card m-1" *ngFor="let product of productList">
-        <h2 class="card-header bg-warning">{{product.name}}</h2>
+        <h2 class="card-header bg-warning">{{product.name | uppercase}}</h2>
         <div class ="card-body">
-            Price: {{product.price}}<br>
+            Price: {{product.price | currency:"INR"}}<br>
             Description: {{product.description}}
         </div>
         <div class="card-footer">

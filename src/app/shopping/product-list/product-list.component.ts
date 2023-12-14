@@ -17,6 +17,8 @@ export class ProductListComponent {
 
   productList: Product[] = []
 
+  today = new Date()
+
   ngOnInit(){
     //console.log(this.psvc.getProductData())
     this.productList = this.psvc.getProductData()

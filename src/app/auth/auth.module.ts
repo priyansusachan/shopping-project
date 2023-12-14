@@ -3,6 +3,8 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { RouterModule, Routes } from "@angular/router";
 import { LogoutComponent } from "./logout.component";
+import { AppMaterialModule } from "../app-material.module";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const authRoutes: Routes = [
     {path: "login", component: LoginComponent},
@@ -12,7 +14,7 @@ const authRoutes: Routes = [
 
 @NgModule({
     declarations: [LoginComponent, RegisterComponent, LogoutComponent], 
-    imports: [RouterModule.forChild(authRoutes)]
+    imports: [ AppMaterialModule, RouterModule.forChild(authRoutes), ReactiveFormsModule, FormsModule]
 })
 export class AuthModule{
     constructor(){
