@@ -10,6 +10,7 @@ import { HomeComponent, NotFoundComponent } from "./menulinks.component";
 import { Routes, RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from "./app-material.module";
+import { ProductService } from "./services/product..service";
 
 //Difine Route Mapping
 const appRoutes: Routes = [
@@ -33,7 +34,9 @@ const appRoutes: Routes = [
     //Register Component classes
     declarations: [AppComponent, HeaderComponent, HomeComponent, NotFoundComponent],
     //startup component
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    //Register servive classes
+    providers:[ProductService]
 })
 //3. Define a class
 export class AppModule{
