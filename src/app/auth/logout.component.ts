@@ -14,6 +14,7 @@ export class LogoutComponent {
 private authService = inject(AuthService)
 
 ngOnInit(){
+  sessionStorage.clear()
   this.authService.setIsLoggedIn(false)
 }
 }

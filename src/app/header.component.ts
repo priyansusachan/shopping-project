@@ -13,6 +13,10 @@ export class HeaderComponent{
 
     ngOnInit(){
         //this.isAdminLoggedIn = this.authService.getIsLoggedIn()
+        if(sessionStorage.getItem("user") != null){
+            this.authService.setIsLoggedIn(true)
+        }
+        
         this.authService.currentLoggedIn.subscribe({
             next:(data) => this.isAdminLoggedIn = data
             

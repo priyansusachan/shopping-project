@@ -1,5 +1,12 @@
 <h2> Manage Products </h2>
 
+<form>
+    ID: <input type="text" name="txtId" [(ngModel)]="fromProduct.id" readonly style="width: 50px;">
+    Product Name: <input type="text" name="txtName" [(ngModel)]="fromProduct.name">
+    Price: <input type="text" name="txtPrice" [(ngModel)]="fromProduct.price">
+    Description<input type="text" name="txtDesc" [(ngModel)]="fromProduct.description"> &nbsp;
+    <button class="btn btn-primary" (click)="save()">Save</button>
+</form>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -7,6 +14,7 @@
             <th>Product Name</th>
             <th>Price</th>
             <th>Description</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -15,6 +23,13 @@
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
             <td>{{product.description}}</td>
+            <td>
+                <button class="btn btn-success" (click)="view(product)">View</button>&nbsp;
+                <button class="btn btn-danger" (click)="delete(product.id)">Delete</button>
+            </td> 
+        </tr>
+        <tr *ngIf="mgProduct.length == 0">
+            <td colspan="4"> No Products Found</td>
         </tr>
     </tbody>
 </table>

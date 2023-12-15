@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from "./app-material.module";
 import { ProductService } from "./services/product..service";
 import {ToastrModule} from "ngx-toastr"
+import { HttpClientModule } from "@angular/common/http";
 
 //Difine Route Mapping
 const appRoutes: Routes = [
@@ -29,7 +30,7 @@ const appRoutes: Routes = [
 //2. Use NgModule Decorator
 @NgModule({
     //Module Dependencies
-    imports: [ShoppingModule, BrowserModule, AppMaterialModule,
+    imports: [ShoppingModule, BrowserModule, AppMaterialModule,HttpClientModule,
         //configuring the routes
         RouterModule.forRoot(appRoutes), BrowserAnimationsModule, ToastrModule.forRoot()], 
     //Register Component classes

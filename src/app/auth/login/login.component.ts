@@ -34,6 +34,7 @@ export class LoginComponent {
       if(userName == "admin" && passowrd == "admin"){
         this.toaster.success("Login Success")
         this.authService.setIsLoggedIn(true)
+        sessionStorage.setItem("user", userName)
         this.router.navigate(['admin/dashboard'])
       }
       else{

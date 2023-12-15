@@ -21,7 +21,10 @@ export class ProductListComponent {
 
   ngOnInit(){
     //console.log(this.psvc.getProductData())
-    this.productList = this.psvc.getProductData()
+    //this.productList = this.psvc.getProductData()
+    this.psvc.getProductData().subscribe({
+      next:data =>this.productList = data
+    })
   }
 
   addToCart(product: Product){
