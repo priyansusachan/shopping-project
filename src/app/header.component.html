@@ -2,8 +2,8 @@
 <mat-toolbar color="primary">
     <span style="margin-right: 100px;"><i>Ng Shopping</i></span>
     <a routerLink="home" class="menu-spacer" routerLinkActive="active-link">Home</a>
-    <a routerLink="auth/login" class="menu-spacer" routerLinkActive="active-link">Login </a>
-    <a routerLink="auth/register" class="menu-spacer" routerLinkActive="active-link"> Register </a>
-    <a routerLink="admin/dashboard" class="menu-spacer" routerLinkActive="active-link"> Dashboard </a>
-    <a routerLink="auth/logout" routerLinkActive="active-link"> Logout</a>
+    <a routerLink="auth/login" class="menu-spacer" routerLinkActive="active-link" *ngIf="!isAdminLoggedIn">Login </a>
+    <a routerLink="auth/register" class="menu-spacer" routerLinkActive="active-link" *ngIf="!isAdminLoggedIn"> Register </a>
+    <a routerLink="admin/dashboard" class="menu-spacer" routerLinkActive="active-link" *ngIf="isAdminLoggedIn"> Dashboard </a>
+    <a routerLink="auth/logout" routerLinkActive="active-link" *ngIf="isAdminLoggedIn"> Logout</a>
 </mat-toolbar>
